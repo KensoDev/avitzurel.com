@@ -1,0 +1,61 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.152.2"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+# Redirect all old domains to avizurel.com
+[[redirects]]
+  from = "https://kensodev.com/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kensodev.com/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://avitzurel.com/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.avitzurel.com/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://avi.io/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.avi.io/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true
+
+# Ensure non-www redirects to www for canonical URL
+[[redirects]]
+  from = "https://avizurel.com/*"
+  to = "https://www.avizurel.com/:splat"
+  status = 301
+  force = true

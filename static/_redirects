@@ -1,0 +1,10 @@
+# Redirect all old domains to avizurel.com
+https://kensodev.com/*       https://www.avizurel.com/:splat 301!
+https://www.kensodev.com/*   https://www.avizurel.com/:splat 301!
+https://avitzurel.com/*      https://www.avizurel.com/:splat 301!
+https://www.avitzurel.com/*  https://www.avizurel.com/:splat 301!
+https://avi.io/*             https://www.avizurel.com/:splat 301!
+https://www.avi.io/*         https://www.avizurel.com/:splat 301!
+
+# Redirect non-www to www for canonical URL
+https://avizurel.com/*       https://www.avizurel.com/:splat 301!
